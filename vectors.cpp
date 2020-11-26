@@ -23,11 +23,11 @@ Vector::~Vector() {
 	
 }
 
-Vector Vector::operator+(Vector& v) {
+Vector Vector::operator+(Vector v) {
 	return Vector(x + v.x, y + v.y, z + v.z);
 }
 
-Vector Vector::operator-(Vector& v) {
+Vector Vector::operator-(Vector v) {
 	return Vector(x - v.x, y - v.y, z - v.z);
 }
 
@@ -35,27 +35,27 @@ Vector Vector::operator*(double s) {
 	return Vector(x * s, y * s, z * s);
 }
 
-double Vector::operator*(Vector& v) {
+double Vector::operator*(Vector v) {
 	return v.x * x + v.y * y + v.z * z;
 }
 
-Vector Vector::operator^(Vector& v) {
+Vector Vector::operator^(Vector v) {
 	return Vector(y * v.z - z * v.y, (x * v.z - z * v.x) * -1, x * v.y - y * v.x);
 }
 
-void Vector::operator=(Vector& v) {
+void Vector::operator=(Vector v) {
 	x = v.x;
 	y = v.y;
 	z = v.z;
 }
 
-void Vector::operator+=(Vector& v) {
+void Vector::operator+=(Vector v) {
 	x += v.x;
 	y += v.y;
 	z += v.z;
 }
 
-void Vector::operator-=(Vector& v) {
+void Vector::operator-=(Vector v) {
 	x -= v.x;
 	y -= v.y;
 	z -= v.z;

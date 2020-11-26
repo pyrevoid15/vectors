@@ -1,5 +1,6 @@
 #pragma once
 #include <cmath>
+#include <string>
 
 namespace vectors {
 	struct Vector {
@@ -10,19 +11,19 @@ namespace vectors {
 		Vector(double, double, double);
 		~Vector();
 
-		Vector operator+(Vector&); //vector addition
-		Vector operator-(Vector&); //vector subtraction
+		Vector operator+(Vector); //vector addition
+		Vector operator-(Vector); //vector subtraction
 		Vector operator*(double); //vector scalar multiplication
-		Vector operator^(Vector&); //vector cross product
-		void operator+=(Vector&); //vector addition
-		void operator-=(Vector&); //vector subtraction
+		Vector operator^(Vector); //vector cross product
+		void operator+=(Vector); //vector addition
+		void operator-=(Vector); //vector subtraction
 		void operator*=(double); //vector scalar multiplication
-		void operator=(Vector&); 
+		void operator=(Vector); 
 
 		Vector cross_product(Vector&);
 		double dot_product(Vector&);
 
-		double operator*(Vector&); //vector dot product
+		double operator*(Vector); //vector dot product
 		double get_rel_angle(Vector&);
 		double get_angle();
 		double magnitude();
