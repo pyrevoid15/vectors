@@ -19,9 +19,12 @@ namespace vectors {
 		void operator*=(double); //vector scalar multiplication
 		void operator=(Vector&); 
 
+		Vector cross_product(Vector&);
+		double dot_product(Vector&);
+
 		double operator*(Vector&); //vector dot product
-		double getRelAngle(Vector&);
-		double getAngle();
+		double get_rel_angle(Vector&);
+		double get_angle();
 		double magnitude();
 		double direction();
 		Vector get_unitvector();

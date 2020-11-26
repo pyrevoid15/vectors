@@ -71,21 +71,29 @@ double Vector::magnitude() {
 	return sqrt(x * x + y * y + z * z);
 }
 
-double Vector::getAngle() {
+double Vector::get_angle() {
 	return atan2(y, x);
 }
 
 double Vector::direction() {
-	return getAngle();
+	return get_angle();
 }
 
-double Vector::getRelAngle(Vector& v) {
+double Vector::get_rel_angle(Vector& v) {
 	return std::acos(operator*(v) / v.magnitude() / magnitude());
 }
 
 Vector Vector::get_unitvector() {
 	double m = magnitude();
 	return Vector(x / m, y / m, z / m);
+}
+
+Vector Vector::cross_product(Vector& v) {
+	return Vector(y * v.z - z * v.y, (x * v.z - z * v.x) * -1, x * v.y - y * v.x);
+}
+
+double Vector::dot_product(Vector& v) {
+	return v.x * x + v.y * y + v.z * z;
 }
 
 OffsetVector::OffsetVector() {
