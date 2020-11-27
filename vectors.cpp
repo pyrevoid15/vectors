@@ -35,6 +35,10 @@ Vector Vector::operator*(double s) {
 	return Vector(x * s, y * s, z * s);
 }
 
+Vector Vector::operator/(double s) {
+	return (s != 0 ? Vector(x / s, y / s, z / s) : (*this));
+}
+
 double Vector::operator*(Vector v) {
 	return v.x * x + v.y * y + v.z * z;
 }
@@ -65,6 +69,14 @@ void Vector::operator*=(double s) {
 	x *= s;
 	y *= s;
 	z *= s;
+}
+
+void Vector::operator/=(double s) {
+	if (s != 0) {
+		x /= s;
+		y /= s;
+		z /= s;
+	}
 }
 
 double Vector::magnitude() {

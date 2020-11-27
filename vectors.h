@@ -1,6 +1,6 @@
 #pragma once
 #include <cmath>
-#include <string>
+#include <vector>
 
 namespace vectors {
 	struct Vector {
@@ -14,10 +14,12 @@ namespace vectors {
 		Vector operator+(Vector); //vector addition
 		Vector operator-(Vector); //vector subtraction
 		Vector operator*(double); //vector scalar multiplication
+		Vector operator/(double); //vector scalar multiplication
 		Vector operator^(Vector); //vector cross product
 		void operator+=(Vector); //vector addition
 		void operator-=(Vector); //vector subtraction
 		void operator*=(double); //vector scalar multiplication
+		void operator/=(double); //vector scalar multiplication
 		void operator=(Vector); 
 
 		Vector cross_product(Vector&);
